@@ -1,1 +1,8 @@
-.meta
+# Ignorar archivos de metadatos de Unity
+*.meta
+
+# Ignorar carpetas de biblioteca de Unity
+Library/
+
+# Ignorar archivos de caché de Unity
+Temp/
