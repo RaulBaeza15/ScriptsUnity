@@ -38,7 +38,7 @@ public class ParaEsferas : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)){
            transform.position=  RandomPlano();
         }
-        if (Vector3.Distance(posicionCubo,transform.position)<1){
+        if (Vector3.Distance(posicionCubo,transform.position)<1.3){
            transform.position=  RandomPlano();
         }
     }

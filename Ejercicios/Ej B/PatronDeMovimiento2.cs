@@ -38,7 +38,7 @@ public class PatronDeMovimiento2 : MonoBehaviour
         if (posicionEsfera.x < transform.position.x){
             transform.Translate(Vector3.left*velocidad*Time.deltaTime);
         }
-        if (Vector3.Distance(posicionEsfera,transform.position)<1){
+        if (Vector3.Distance(posicionEsfera,transform.position)<1.3){
             if(numEsfera%3==0){
                 esferaActual=esfera1;
             }if(numEsfera%3==1){
