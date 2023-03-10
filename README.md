@@ -4,7 +4,7 @@ Este repositorio contiene varios scripts en C# que he creado para Unity. Estos s
 
 ## Requerimientos
 
-- Unity 2019.4 o posterior
+- Unity 2020.3.44f1
 
 ## Instalación
 
