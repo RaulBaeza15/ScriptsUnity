@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1266352388872794737, guid: e91eb7c3cea14f54a91d436a733e7617, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 1266352388872794741, guid: e91eb7c3cea14f54a91d436a733e7617, type: 3}
+      propertyPath: m_Name
+      value: Cube (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 3294205233109230012, guid: e91eb7c3cea14f54a91d436a733e7617, type: 3}
       propertyPath: m_Name
       value: Cube (1)
