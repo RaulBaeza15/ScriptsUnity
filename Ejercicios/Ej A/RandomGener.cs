@@ -7,22 +7,16 @@ public class RandomGener : MonoBehaviour
     float posicionX=0;
     float posicionZ=0;
     GameObject plano ;
-    private Mesh mesh;
+    GameObject cubo ;
+    
     // Start is called before the first frame update
     void Start()
     {
-        plano = GameObject.Find("Plane");
-        Color color = new Color(1f, 0f, 0f); // Rojo
         
+        Color color = new Color(1f, 0f, 0f); // Rojo
         GetComponent<Renderer>().material.color = color;
-        float width = plano.GetComponent<Renderer>().bounds.size.x;
-        float height = plano.GetComponent<Renderer>().bounds.size.z;
-
-        // Generar una posición aleatoria dentro de los límites del objeto Plane
-        float randomX = Random.Range(-width / 2f, width / 2f);
-        float randomZ = Random.Range(-height / 2f, height / 2f);
-        Vector3 randomPosition = new Vector3(randomX, 0f, randomZ);
-        transform.position=  randomPosition;
+        
+        transform.position=  RandomPlano();
         
 
     }
@@ -30,33 +24,43 @@ public class RandomGener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cubo = GameObject.Find("Cube");
+        Vector3 posicionCubo=cubo.transform.position;
         if (Input.GetKeyDown(KeyCode.D)){
             posicionX++;
-            transform.position= new Vector3(posicionX, 0f, 0f);            
+            transform.position= new Vector3(posicionX , 0f, posicionZ);            
         }
         if (Input.GetKeyDown(KeyCode.A)){
             posicionX--;
-            transform.position= new Vector3(posicionX, 0f, 0f);
+            transform.position= new Vector3(posicionX, 0f, posicionZ);
         }
         if (Input.GetKeyDown(KeyCode.W)){
             posicionZ++;
-            transform.position= new Vector3(0f,0f ,posicionZ );
+            transform.position= new Vector3(posicionX, 0f, posicionZ);
         }
         if (Input.GetKeyDown(KeyCode.S)){
             posicionZ--;
-            transform.position= new Vector3(0f,0f ,posicionZ );
+            transform.position= new Vector3(posicionX, 0f, posicionZ);
         }
         if (Input.GetKeyDown(KeyCode.R)){
-           plano = GameObject.Find("Plane"); 
-           float width = plano.GetComponent<Renderer>().bounds.size.x;
+           transform.position=  RandomPlano();
+        }
+        if (Vector3.Distance(posicionCubo,transform.position)<1){
+           transform.position=  RandomPlano();
+        }
+        
+         
+    }
+    
+    Vector3 RandomPlano(){
+        plano = GameObject.Find("Plane"); 
+        float width = plano.GetComponent<Renderer>().bounds.size.x;
         float height = plano.GetComponent<Renderer>().bounds.size.z;
-
         // Generar una posición aleatoria dentro de los límites del objeto Plane
         float randomX = Random.Range(-width / 2f, width / 2f);
         float randomZ = Random.Range(-height / 2f, height / 2f);
         Vector3 randomPosition = new Vector3(randomX, 0f, randomZ);
-        transform.position=  randomPosition;
-        }
+        return randomPosition ;
     }
     
 }

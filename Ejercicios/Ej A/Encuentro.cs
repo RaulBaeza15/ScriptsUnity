@@ -9,8 +9,8 @@ public class Encuentro : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-          cam = GameObject.Find("Main Camera");
-         cubo = GameObject.Find("Cube");
+        cam = GameObject.Find("Main Camera");
+        cubo = GameObject.Find("Cube");
         cam.transform.LookAt(cubo.transform);
         
     }
@@ -19,5 +19,6 @@ public class Encuentro : MonoBehaviour
     void Update()
     {
         cubo.transform.Rotate(new Vector3(0f,10f,0f));
+        
     }
 }
