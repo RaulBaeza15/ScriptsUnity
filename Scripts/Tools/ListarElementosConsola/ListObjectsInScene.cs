@@ -12,11 +12,13 @@ public class ListObjectsInScene : EditorWindow
 
         // Get all game objects in the scene
         GameObject[] allObjects = UnityEngine.SceneManagement.SceneManager.GetActiveScene().GetRootGameObjects();
+        string elementos = "";
 
         // Display each object's name in the console
         foreach (GameObject obj in allObjects)
         {
-            Debug.Log(obj.name);
+            elementos = elementos +"{ "+obj.name+" } ";
         }
+        Debug.Log(elementos);
     }
 }
